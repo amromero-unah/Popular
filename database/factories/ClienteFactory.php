@@ -23,7 +23,7 @@ class ClienteFactory extends Factory
     {
         return [
             'id_cliente' => $this->faker->numerify,
-            'nombre_cliente' => $this->faker->firstName,
+            'nombre_cliente' => $this->faker->firstName .' '.$this->faker->lastName ,
             'telefono_cliente' => $this->faker->numerify('########'),
         ];
     }
