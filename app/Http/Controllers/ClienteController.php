@@ -84,4 +84,15 @@ class ClienteController extends Controller
     {
         //
     }
+
+    public function buscarCliente(Request $request)
+    {
+        $busqueda = $request->input("busqueda");
+        $clientes = Cliente::where("nombre",
+            "like", "%" . $request->input("busqueda") . "%")
+            ->paginate(10);
+
+        return view("clientes.clientes_index")
+            ->with("busqueda", $busqueda)->with("clientes", $clientes);
+    }
 }

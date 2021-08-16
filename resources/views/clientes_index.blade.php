@@ -1,13 +1,18 @@
 @extends('layouts.app')
 @section('title', 'Clientes')
 @section('content')
-    <div class="container">
+    <div class="container" style="margin-top: 15px" >
         <div class="row">
-            <div class="table-responsive-sm -mr-2 col-md-10"
-                 style="text-align: center; margin: 0 auto;
-                     margin-top: 10px; background-color: #1C2D3F">
-                <h1 style="color: white">CLIENTES</h1>
-
+            <div class="col"  >
+                <ul class="list-group" style="width: 58rem; margin: 0 auto">
+                    <li class="list-group-item" style="background-color:#e91e63">
+                        <h2 style="color:#ffffff;">
+                            CLIENTES
+                            <a class="btn-sm btn-info float-right" style="width: 10px; height: 20px" href="{{route("cliente.create")}}"><i
+                                    class="fa fa-plus"></i> Agregar</a>
+                        </h2>
+                    </li>
+                </ul>
             </div>
 
             @if($clientes->count())
@@ -16,7 +21,7 @@
                      margin-top: 20px;">
                     <table name="tabla_prove" class="table">
                         <tr>
-                            <thead style="background: #1C2D3F; color: #ffffff">
+                            <thead style="background: #e91e63; color: #ffffff">
                             <th scope="col">N°</th>
                             <th scope="col">Id</th>
                             <th scope="col">Nombre</th>
@@ -31,7 +36,11 @@
                                 <td style="font: caption; text-align: center">{{$cliente->id_cliente}}</td>
                                 <td style="font: caption; text-align: center">{{$cliente->nombre_cliente}}</td>
                                 <td style="font: caption; text-align: center">{{$cliente->telefono_cliente}}</td>
-                                <td></td>
+                                <td>
+                                    <a class="btn btn-primary" href="{{route('cliente.show', ['id'=>$cliente->id])}}">Ver</a>
+                                    <a class="btn btn-success" href="">Editar</a>
+                                    <a class="btn btn-danger" href="">Eliminar</a>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

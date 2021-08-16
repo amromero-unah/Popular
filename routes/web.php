@@ -41,6 +41,9 @@ Route::get("/clientes/create/",[ClienteController::class,"create"])
 Route::post("/clientes/store",[ClienteController::class,"store"])
     ->name("cliente.store");
 
+Route::get("/clientes/busqueda",[ClienteController::class,"buscarCliente"])
+    ->name("cliente.buscar");
+
 Route::get("/proveedores",[ProveedorController::class,"index"])
     ->name("proveedor.index");
 
@@ -82,6 +85,7 @@ Route::get("/productos/create/",[ProductoController::class,"create"])
 
 Route::post("/productos/store",[ProductoController::class,"store"])
     ->name("producto.store");
+
 
 
 
