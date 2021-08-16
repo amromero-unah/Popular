@@ -12,7 +12,7 @@
     @if(session('error'))
         <div style="margin-top: 15px">
             <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin: 0 auto; width: 40rem">
-                <strong>Importante: </strong>{{session('error')}}.
+                <strong>Importante: </strong>{{session('error')}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
