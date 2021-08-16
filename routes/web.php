@@ -19,7 +19,7 @@ use App\Http\Controllers\ProductoController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+/*****************RUTAS DE CLIENTES***************/
 Route::get("/clientes",[ClienteController::class,"index"])
     ->name("cliente.index");
 
@@ -47,4 +47,31 @@ Route::get("/clientes/busqueda",[ClienteController::class,"search"])
 Route::get("/clientes/busqueda",[ClienteController::class,"buscarCliente"])
     ->name("cliente.buscar");
 
+/*****************RUTAS DE PROVEEDORES***************/
+Route::get("/proveedores",[ProveedorController::class,"index"])
+    ->name("proveedor.index");
 
+    Route::get("/proveedores/{id}/",[ProveedorController::class,"show"])
+    ->name("proveedor.show")->where('id','[0-9]+');
+
+Route::get("/proveedores/create",[ProveedorController::class,"create"])
+    ->name("proveedor.create");
+
+Route::post("/proveedores/create",[ProveedorController::class,"store"])
+    ->name("proveedor.create");
+
+Route::get("/proveedores/{id}/edit",[ProveedorController::class,"edit"])
+    ->name("proveedor.edit")->where('id','[0-9]+');
+
+Route::put("/proveedores/{id}/edit",[ProveedorController::class,"update"])
+    ->name("proveedor.edit")->where('id','[0-9]+');
+
+Route::delete('/proveedores/{id}/destroy',[ProveedorController::class,"destroy"])
+    ->name("proveedor.destroy");
+
+Route::get("/proveedores/busqueda",[ProveedorController::class,"search"])
+    ->name("proveedor.search");
+
+Route::get("/proveedores/busqueda",[ProveedorController::class,"buscarProveedor"])
+    ->name("proveedor.buscar");
+    
