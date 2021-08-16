@@ -120,7 +120,7 @@ class ClienteController extends Controller
         $cliente = Cliente::findOrfail($id);
         $cliente->delete();
 
-        return redirect()->route("cliente.index")->with("error", "Se eliminó exitosamente el proveedor");
+        return redirect()->route("cliente.index")->with("error", "Se eliminó exitosamente el cliente");
     }
 
     public function buscarCliente(Request $request)

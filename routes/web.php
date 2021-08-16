@@ -33,13 +33,10 @@ Route::post("/clientes/create",[ClienteController::class,"store"])
     ->name("cliente.create");
 
 Route::get("/clientes/{id}/edit",[ClienteController::class,"edit"])
-    ->name("cliente.edit");
+    ->name("cliente.edit")->where('id','[0-9]+');
 
 Route::put("/clientes/{id}/edit",[ClienteController::class,"update"])
-    ->name("cliente.edit");
-
-Route::get('/clientes/{id}/destroy',[ClienteController::class,"destroy"])
-    ->name("cliente.destroy");
+    ->name("cliente.edit")->where('id','[0-9]+');
 
 Route::delete('/clientes/{id}/destroy',[ClienteController::class,"destroy"])
     ->name("cliente.destroy");
