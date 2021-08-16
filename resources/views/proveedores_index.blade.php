@@ -105,7 +105,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p>Esta seguro que deseas borrar a {{$proveedor->nombre_proveedor}}</p>
+                                <p>Esta seguro que deseas borrar el proveedor</p>
                             </div>
                             <form name="formulario_eliminar" action="" method="POST">
                                 <div class="modal-footer">
