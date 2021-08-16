@@ -14,7 +14,7 @@
                     </div>
 
                     <div style="float: left; display: inline-block; margin-top: 10px">
-                        <p style="color: white; margin-left: 20px">ID Cliente: <strong style="color: white">{{$cliente->id_cliente}} </strong></p>
+                        <p style="color: white; margin-left: 20px">ID Cliente: <strong style="color: white">{{$cliente->id}} </strong></p>
                         <p style="color: white; margin-left: 20px">Nombre Cliente: <strong style="color: white">{{$cliente->nombre_cliente}} </strong></p>
                         <p style="color: white; margin-left: 20px">Telefono Cliente: <strong style="color: white">{{$cliente->telefono_cliente}} </strong> </p>
                     </div>

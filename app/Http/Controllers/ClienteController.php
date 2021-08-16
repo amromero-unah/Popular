@@ -25,18 +25,35 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('clientes_create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            "nombre_cliente" => "required|max:50",
+            "telefono_cliente" => "required|max:99999999|unique:clientes,telefono_cliente,"
+        ], [
+            "nombre_cliente.required" => "Se requiere ingresar el nombre del cliente.",
+            "nombre_cliente.max" => "El nombre no debe ser máximo a 50 caracteres.",
+            "telefono_cliente.required" => "Se requiere ingresar el télefono del cliente",
+            "telefono_cliente.max" => "El télefono debe ser igual a 8 caracteres",
+            "telefono_cliente.min" => "El télefono debe ser igual a 8 caracteres",
+            "telefono_cliente.unique" => "El télefono ya ha sido registrado",
+        ]);
+
+        $cliente = new Cliente();
+        $cliente->nombre_cliente = $request->input("nombre_cliente");
+        $cliente->telefono_cliente = $request->input("telefono_cliente");
+        $cliente->save();
+
+        return redirect()->route("cliente.index")->with("exito", "Se creó exitosamente el proveedor");
     }
 
     /**
