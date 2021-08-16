@@ -6,7 +6,12 @@
             <div class="card" style="border-style: none!important; margin-top: 15px">
                 <div class="container" style="border-style: none!important; background-color: #0D6EFD; border-radius: 5px; width: 42rem">
                     <hr style="border-top: 2px solid white; border-bottom: 2px solid white; border-left:none; border-right:none; height: 2px; ">
-                    <li class="list-group-item active" style="border-style: none!important; width: 40rem; margin: 0 auto"><strong>CLIENTE</strong></li>
+                    <li class="list-group-item active" style="border-style: none!important; width: 40rem; margin: 0 auto">
+                        <h2 style="color:#ffffff; text-align: center">
+                            VISUALIZAR CLIENTE
+                        </h2>
+                    </li>
+
                     <hr style="border-top: 2px solid white; border-bottom: 2px solid white; border-left:none; border-right:none; height: 2px; ">
 
                     <div  style="margin-top: 10px; width: 300px ; height: 300px; float: left; display: inline-block; margin-top: 10px; margin-bottom: 1px; margin-left: 10px; margin-right: 10px">

@@ -26,6 +26,18 @@ Route::get("/clientes",[ClienteController::class,"index"])
 Route::get("/clientes/{id}/",[ClienteController::class,"show"])
     ->name("cliente.show")->where('id','[0-9]+');
 
+Route::get("/clientes/create",[ClienteController::class,"create"])
+    ->name("cliente.create");
+
+Route::post("/clientes/create",[ClienteController::class,"store"])
+    ->name("cliente.create");
+
+Route::get("/clientes/{id}/edit",[ClienteController::class,"edit"])
+    ->name("cliente.edit");
+
+Route::put("/clientes/{id}/edit",[ClienteController::class,"update"])
+    ->name("cliente.edit");
+
 Route::get('/clientes/{id}/destroy',[ClienteController::class,"destroy"])
     ->name("cliente.destroy");
 
@@ -34,12 +46,6 @@ Route::delete('/clientes/{id}/destroy',[ClienteController::class,"destroy"])
 
 Route::get("/clientes/busqueda",[ClienteController::class,"search"])
     ->name("cliente.search");
-
-Route::get("/clientes/create",[ClienteController::class,"create"])
-    ->name("cliente.create");
-
-Route::post("/clientes/create",[ClienteController::class,"store"])
-    ->name("cliente.create");
 
 Route::get("/clientes/busqueda",[ClienteController::class,"buscarCliente"])
     ->name("cliente.buscar");
