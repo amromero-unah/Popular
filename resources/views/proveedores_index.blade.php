@@ -99,13 +99,13 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Eliminar Producto</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Eliminar Proveedores</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p>Esta seguro que deseas borrar el producto?</p>
+                                <p>Esta seguro que deseas borrar a {{$proveedor->nombre_proveedor}}</p>
                             </div>
                             <form name="formulario_eliminar" action="" method="POST">
                                 <div class="modal-footer">

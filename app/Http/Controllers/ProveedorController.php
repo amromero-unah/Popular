@@ -83,7 +83,8 @@ class ProveedorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $proveedor = Proveedor::findOrFail($id);
+        return view("proveedores_update")->with("proveedor", $proveedor);
     }
 
     /**
@@ -95,7 +96,31 @@ class ProveedorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            "nombre_proveedor" => "required|max:50",
+            "correo_proveedor" => "required",
+            "nombre_contacto_proveedor" => "required|max:50",
+            "telefono_proveedor" => "required|max:99999999|unique:proveedors,telefono_proveedor,"
+        ], [
+            "nombre_proveedor.required" => "Se requiere ingresar el nombre del proveedor.",
+            "nombre_peroveedor.max" => "El nombre no debe ser máximo a 50 caracteres.",
+            "correo_proveedor.required" => "Se requiere ingresar el correo del proveedor.",
+            "telefono_peroveedor.required" => "Se requiere ingresar el télefono del proveedor",
+            "telefono_proveedor.max" => "El télefono debe ser igual a 8 caracteres",
+            "telefono_proveedor.min" => "El télefono debe ser igual a 8 caracteres",
+            "telefono_proveedor.unique" => "El télefono ya ha sido registrado",
+            "nombre_contacto_proveedor.required" => "Se requiere ingresar el nombre del contacto del proveedor.",
+            "nombre_contacto_peroveedor.max" => "El nombre del contacto no debe ser máximo a 50 caracteres.",
+        ]);
+
+        $proveedor = new Proveedor();
+        $proveedor->nombre_proveedor = $request->input("nombre_proveedor");
+        $proveedor->correo_proveedor = $request->input("correo_proveedor");
+        $proveedor->nombre_contacto_proveedor = $request->input("nombre_contacto_proveedor");
+        $proveedor->telefono_proveedor = $request->input("telefono_proveedor");
+        $proveedor->save();
+
+        return redirect()->route("proveedor.index")->with("exito", "Se creó exitosamente el proveedor");
     }
 
     /**
@@ -106,6 +131,9 @@ class ProveedorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $proveedor = Proveedor::findOrfail($id);
+        $proveedor->delete();
+
+        return redirect()->route("proveedor.index")->with("error", "Se eliminó exitosamente el proveedor");
     }
 }
