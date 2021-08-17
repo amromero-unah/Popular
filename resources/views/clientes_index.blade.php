@@ -94,20 +94,17 @@
                      aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Eliminar Producto</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                            <div class="modal-header" style="background-color:#e91e63; color: white">
+                                <h5 class="modal-title" id="exampleModalLabel">Eliminar Cliente</h5>
+                                <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <p>Esta seguro que deseas borrar el producto?</p>
+                                <p>¿Esta seguro que deseas borrar el cliente?</p>
                             </div>
                             <form name="formulario_eliminar" action="" method="POST">
                                 <div class="modal-footer">
                                     @csrf
                                     @method('DELETE')
-                                    <input type="button" class="btn btn-primary" data-dismiss="modal" value="Cerrar">
                                     <input type="submit" class="btn btn-danger" value="Eliminar">
                                 </div>
                             </form>

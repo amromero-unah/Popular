@@ -19,7 +19,8 @@ use App\Http\Controllers\ProductoController;
 Route::get('/', function () {
     return view('welcome');
 });
-/*****************RUTAS DE CLIENTES***************/
+
+/*  RUTAS DE CLIENTES  */
 Route::get("/clientes",[ClienteController::class,"index"])
     ->name("cliente.index");
 
@@ -47,7 +48,7 @@ Route::get("/clientes/busqueda",[ClienteController::class,"search"])
 Route::get("/clientes/busqueda",[ClienteController::class,"buscarCliente"])
     ->name("cliente.buscar");
 
-/*****************RUTAS DE PROVEEDORES***************/
+/*  RUTAS DE PROVEEDORES  */
 Route::get("/proveedores",[ProveedorController::class,"index"])
     ->name("proveedor.index");
 
@@ -74,4 +75,28 @@ Route::get("/proveedores/busqueda",[ProveedorController::class,"search"])
 
 Route::get("/proveedores/busqueda",[ProveedorController::class,"buscarProveedor"])
     ->name("proveedor.buscar");
-    
+
+/*  RUTAS DE PRODUCTOS  */
+Route::get("/productos",[ProductoController::class,"index"])
+    ->name("producto.index");
+
+Route::get("/productos/{id}/",[ProductoController::class,"show"])
+    ->name("producto.show")->where('id','[0-9]+');
+
+Route::get("/productos/create",[ProductoController::class,"create"])
+    ->name("producto.create");
+
+Route::post("/productos/create",[ProductoController::class,"store"])
+    ->name("producto.create");
+
+Route::get("/productos/{id}/edit",[ProductoController::class,"edit"])
+    ->name("producto.edit")->where('id','[0-9]+');
+
+Route::put("/productos/{id}/edit",[ProductoController::class,"update"])
+    ->name("producto.edit")->where('id','[0-9]+');
+
+Route::delete('/productos/{id}/destroy',[ProductoController::class,"destroy"])
+    ->name("producto.destroy");
+
+
+

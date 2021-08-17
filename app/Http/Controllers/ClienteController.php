@@ -53,7 +53,7 @@ class ClienteController extends Controller
         $cliente->telefono_cliente = $request->input("telefono_cliente");
         $cliente->save();
 
-        return redirect()->route("cliente.index")->with("exito", "Se creó exitosamente el proveedor");
+        return redirect()->route("cliente.index")->with("exito", "Se creó exitosamente el cliente");
     }
 
     /**
@@ -106,7 +106,7 @@ class ClienteController extends Controller
         $cliente->telefono_cliente = $request->input("telefono_cliente");
         $cliente->save();
 
-        return redirect()->route("cliente.index")->with("exito", "Se editó exitosamente el proveedor");
+        return redirect()->route("cliente.index")->with("exito", "Se editó exitosamente el cliente");
     }
 
     /**
@@ -126,7 +126,7 @@ class ClienteController extends Controller
     public function buscarCliente(Request $request)
     {
         $busqueda = $request->input("busqueda");
-        $clientes = Cliente::where("nombre",
+        $clientes = Cliente::where("nombre_cliente",
             "like", "%" . $request->input("busqueda") . "%")
             ->paginate(10);
 
