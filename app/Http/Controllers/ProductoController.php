@@ -15,7 +15,7 @@ class ProductoController extends Controller
     public function index(Request $request)
     {
         $productos = Producto::search($request->search)->paginate(10);
-        return view('productos_index')->with('productos', $productos);
+        return view('productos.productos_index')->with('productos', $productos);
     }
 
     /**
@@ -25,7 +25,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('productos_create');
+        return view('productos.productos_create');
     }
 
     /**
@@ -71,7 +71,7 @@ class ProductoController extends Controller
     public function show($id)
     {
         $producto = Producto::findOrFail($id);
-        return view('productos_show')->with('producto', $producto);
+        return view('productos.productos_show')->with('producto', $producto);
     }
 
     /**
@@ -83,7 +83,7 @@ class ProductoController extends Controller
     public function edit($id)
     {
         $producto = Producto::findOrFail($id);
-        return view("productos_update")->with("producto", $producto);
+        return view("productos.productos_update")->with("producto", $producto);
     }
 
     /**
@@ -133,15 +133,4 @@ class ProductoController extends Controller
 
         return redirect()->route("producto.index")->with("error", "Se eliminó exitosamente el producto");
     }
-
-    // public function buscarCliente(Request $request)
-    // {
-    //     $busqueda = $request->input("busqueda");
-    //     $productos = Producto::where("nombre_producto",
-    //         "like", "%" . $request->input("busqueda") . "%")
-    //         ->paginate(10);
-
-    //     return view("clientes.clientes_index")
-    //         ->with("busqueda", $busqueda)->with("clientes", $productos);
-    // }
 }

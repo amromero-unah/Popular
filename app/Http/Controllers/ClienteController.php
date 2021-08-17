@@ -15,7 +15,7 @@ class ClienteController extends Controller
     public function index(Request $request)
     {
         $clientes = Cliente::search($request->search)->paginate(10);
-        return view('clientes_index')->with('clientes', $clientes);
+        return view('clientes.clientes_index')->with('clientes', $clientes);
     }
 
     /**
@@ -25,7 +25,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('clientes_create');
+        return view('clientes.clientes_create');
     }
 
     /**
@@ -65,7 +65,7 @@ class ClienteController extends Controller
     public function show($id)
     {
         $cliente = Cliente::findOrFail($id);
-        return view('clientes_show')->with('cliente', $cliente);
+        return view('clientes.clientes_show')->with('cliente', $cliente);
     }
 
     /**
@@ -77,7 +77,7 @@ class ClienteController extends Controller
     public function edit($id)
     {
         $cliente = Cliente::findOrFail($id);
-        return view("clientes_update")->with("cliente", $cliente);
+        return view("clientes.clientes_update")->with("cliente", $cliente);
     }
 
     /**
