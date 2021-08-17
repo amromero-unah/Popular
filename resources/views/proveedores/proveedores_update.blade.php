@@ -2,7 +2,7 @@
 @section('title', 'Proveedores')
 @section('content')
     <div class="container">
-  
+
         <div class="row" style="margin-top: 15px">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"
                  style="margin: 0 auto">
@@ -19,10 +19,10 @@
 
                             <div class="col-md-11" style="margin: 0 auto">
                                 <form id="form_proveedores" style="margin: 0 auto" enctype="multipart/form-data"
-                                      action="{{route("cliente.edit",["id"=>$proveedor->id])}}"
+                                      action="{{route("proveedor.edit",["id"=>$proveedor->id])}}"
                                       method="post">
-                                        @method("PUT")
-                                        @csrf
+                                    @method("PUT")
+                                    @csrf
 
                                     <div class="d-grid gap-2" style="margin: 0 auto">
                                         <label style="color: white"><strong>Nombre:</strong></label>
@@ -64,7 +64,7 @@
                                         @enderror
                                     </div>
 
-                                   
+
                                     <div class="d-grid gap-2" style="margin: 0 auto">
                                         <label style="color: white"><strong>Télefono:</strong></label>
                                         <input class="form-control @error('telefono_proveedor') is-invalid @enderror"
@@ -99,7 +99,7 @@
                                                @else
                                                value="{{$proveedor->nombre_contacto_proveedor}}"
                                                @endif
-                                               maxlength="50" name="nombre_cliente" id="nombre_contacto_proveedor">
+                                               maxlength="50" name="nombre_contacto_proveedor" id="nombre_contacto_proveedor">
                                         @error('nombre_contacto_proveedor')
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

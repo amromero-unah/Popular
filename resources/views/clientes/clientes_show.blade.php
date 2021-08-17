@@ -6,6 +6,7 @@
             <div class="card" style="border-style: none!important; margin-top: 15px">
                 <div class="container" style="border-style: none!important; background-color: #0D6EFD; border-radius: 5px; width: 42rem">
                     <hr style="border-top: 2px solid white; border-bottom: 2px solid white; border-left:none; border-right:none; height: 2px; ">
+
                     <li class="list-group-item active" style="border-style: none!important; width: 40rem; margin: 0 auto">
                         <h2 style="color:#ffffff; text-align: center">
                             VISUALIZAR CLIENTE

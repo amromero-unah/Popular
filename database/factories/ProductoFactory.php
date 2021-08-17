@@ -22,7 +22,10 @@ class ProductoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nombre_producto'=> $this->faker->randomElement($array = array ('Papel','Lapiz','Laptop', 'Colores', 'Silla', 'Mesa')),
+            'categoria_producto' =>$this->faker->randomElement($array = array ('Papeleria','Informática','Ofimática')),
+            'precio_compra'=> $this->faker->numberBetween($min = 10, $max = 15),
+            'precio_venta'=> $this->faker->numberBetween($min = 16, $max = 20)
         ];
     }
 }

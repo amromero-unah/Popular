@@ -100,7 +100,7 @@ class ProveedorController extends Controller
             "nombre_proveedor" => "required|max:50",
             "correo_proveedor" => "required",
             "nombre_contacto_proveedor" => "required|max:50",
-            "telefono_proveedor" => "required|max:99999999|unique:proveedors,telefono_proveedor,"
+            "telefono_proveedor" => "required|max:99999999|unique:proveedors,telefono_proveedor,". $id,
         ], [
             "nombre_proveedor.required" => "Se requiere ingresar el nombre del proveedor.",
             "nombre_peroveedor.max" => "El nombre no debe ser máximo a 50 caracteres.",
@@ -113,14 +113,14 @@ class ProveedorController extends Controller
             "nombre_contacto_peroveedor.max" => "El nombre del contacto no debe ser máximo a 50 caracteres.",
         ]);
 
-        $proveedor = new Proveedor();
+        $proveedor = Proveedor::findOrFail($id);
         $proveedor->nombre_proveedor = $request->input("nombre_proveedor");
         $proveedor->correo_proveedor = $request->input("correo_proveedor");
         $proveedor->nombre_contacto_proveedor = $request->input("nombre_contacto_proveedor");
         $proveedor->telefono_proveedor = $request->input("telefono_proveedor");
         $proveedor->save();
 
-        return redirect()->route("proveedor.index")->with("exito", "Se creó exitosamente el proveedor");
+        return redirect()->route("proveedor.index")->with("exito", "Se editó exitosamente el proveedor");
     }
 
     /**
@@ -136,5 +136,14 @@ class ProveedorController extends Controller
 
         return redirect()->route("proveedor.index")->with("error", "Se eliminó exitosamente el proveedor");
     }
+    public function buscarProveedor(Request $request)
+    {
+        $busqueda = $request->input("busqueda");
+        $proveedores = Proveedor::where("nombre",
+            "like", "%" . $request->input("busqueda") . "%")
+            ->paginate(10);
 
+        return view("proveedores.proveedores_index")
+            ->with("busqueda", $busqueda)->with("proveedores", $proveedores);
+    }
 }

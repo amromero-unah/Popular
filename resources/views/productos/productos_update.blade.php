@@ -29,6 +29,7 @@
                                                placeholder=""
                                                onkeypress="return valLetra(event);"
                                                pattern="[A-Za-záéíóúñÑ ]{2,50}"
+                                               title="No se permiten números"
                                                required
                                                @if(old("nombre_producto"))
                                                value="{{old("nombre_producto")}}"
@@ -51,6 +52,7 @@
                                                onkeypress="return valLetra(event);"
                                                pattern="[A-Za-záéíóúñÑ ]{2,50}"
                                                required
+                                               title="Solo se permite texto"
                                                @if(old("categoria_producto"))
                                                value="{{old("categoria_producto")}}"
                                                @else
@@ -70,7 +72,8 @@
                                         <input class="form-control  @error('precio_compra') is-invalid @enderror"
                                                placeholder=""
                                                onkeypress="return valNumero(event);"
-                                               pattern="[0-9,]{2,20}"
+                                               pattern="[0-9,]{1,20}"
+                                               title="El precio de compra debe ser menor al precio de venta"
                                                required
                                                @if(old("precio_compra"))
                                                value="{{old("precio_compra")}}"
@@ -90,7 +93,8 @@
                                         <input class="form-control  @error('precio_venta') is-invalid @enderror"
                                                placeholder=""
                                                onkeypress="return valNumero(event);"
-                                               pattern="[0-9,]{2,20}"
+                                               pattern="[0-9,]{1,20}"
+                                               title="El precio de venta debe ser mayor al precio de compra"
                                                required
                                                @if(old("precio_venta"))
                                                value="{{old("precio_venta")}}"

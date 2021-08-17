@@ -59,7 +59,7 @@
                                         <input class="form-control  @error('precio_compra') is-invalid @enderror"
                                                placeholder=""
                                                onkeypress="return valNumero(event);"
-                                               pattern="[0-9,]{2,20}"
+                                               pattern="[0-9,]{1,20}"
                                                required
                                                value="{{old("precio_compra")}}"
                                                maxlength="20" name="precio_compra" id="precio_compra">
@@ -75,7 +75,7 @@
                                         <input class="form-control  @error('precio_venta') is-invalid @enderror"
                                                placeholder=""
                                                onkeypress="return valNumero(event);"
-                                               pattern="[0-9,]{2,20}"
+                                               pattern="[0-9,]{1,20}"
                                                required
                                                value="{{old("precio_venta")}}"
                                                maxlength="20" name="precio_venta" id="precio_venta">
