@@ -15,7 +15,7 @@ class ProveedorController extends Controller
     public function index(Request $request)
     {
         $proveedores = Proveedor::search($request->search)->paginate(10);
-        return view('proveedores_index')->with('proveedores', $proveedores);
+        return view('proveedores.proveedores_index')->with('proveedores', $proveedores);
     }
 
     /**
@@ -25,7 +25,7 @@ class ProveedorController extends Controller
      */
     public function create()
     {
-        return view('proveedores_create');
+        return view('proveedores.proveedores_create');
     }
 
     /**
@@ -72,7 +72,7 @@ class ProveedorController extends Controller
     public function show($id)
     {
         $proveedor = Proveedor::findOrFail($id);
-        return view('proveedores_show')->with('proveedor', $proveedor);
+        return view('proveedores.proveedores_show')->with('proveedor', $proveedor);
     }
 
     /**
@@ -84,7 +84,7 @@ class ProveedorController extends Controller
     public function edit($id)
     {
         $proveedor = Proveedor::findOrFail($id);
-        return view("proveedores_update")->with("proveedor", $proveedor);
+        return view("proveedores.proveedores_update")->with("proveedor", $proveedor);
     }
 
     /**
