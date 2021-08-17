@@ -19,10 +19,7 @@ class CreateProveedorsTable extends Migration
             $table->string('correo_proveedor');
             $table->string('telefono_proveedor',8)->unique();
             $table->string('nombre_contacto_proveedor',50);
-            $table->foreignId('producto_id')->unsigned()->nullable();
             $table->timestamps();
-
-            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
