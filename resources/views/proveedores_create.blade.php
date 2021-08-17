@@ -2,10 +2,7 @@
 @section('title', 'Proveedores')
 @section('content')
     <div class="container">
-    <div class="container">
-    <a type="button" class="form-check-input" style="border-color: white; margin-left:18%" href="/proveedores" id="exampleCheck1">
-    <img src="/images/atras.png" style="width: 35px; height: 35px;"/></a>
-    </div>
+
         <div class="row" style="margin-top: 15px">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"
                  style="margin: 0 auto">

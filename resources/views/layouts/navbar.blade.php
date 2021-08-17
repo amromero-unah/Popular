@@ -17,8 +17,11 @@
                 </li>
             </ul>
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
+                <div style="margin-left: 10px;">
+                <button class="btn btn-outline-danger" style="width: 40px;" type="submit"><img src="https://img.icons8.com/metro/26/000000/delete-sign.png" style="margin-left:-6px" /></button>
+                </div>
             </form>
         </div>
     </div>

@@ -3,10 +3,6 @@
 @section('content')
     <div class="container">
         <div>
-    <div class="container">
-    <a type="button" class="form-check-input" style="border-color: white; margin-left:18%" href="/proveedores" id="exampleCheck1">
-    <img src="/images/atras.png" style="width: 35px; height: 35px;"/></a>
-    </div>
             <div class="card" style="border-style: none!important; margin-top: 15px">
                 <div class="container" style="border-style: none!important; background-color: #0db9fd; border-radius: 5px; width: 42rem">
                     <hr style="border-top: 2px solid white; border-bottom: 2px solid white; border-left:none; border-right:none; height: 2px; ">

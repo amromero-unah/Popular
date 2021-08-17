@@ -23,7 +23,7 @@ class ProveedorFactory extends Factory
     {
         return [
             'nombre_proveedor'=> $this->faker->firstName .' '.$this->faker->lastName ,
-            'correo_proveedor' =>$this->email, 
+            'correo_proveedor' =>$this->faker->email, 
             'telefono_proveedor'=> $this->faker->numerify('########'),
             'nombre_contacto_proveedor'=> $this->faker->firstName .' '.$this->faker->lastName 
         ];

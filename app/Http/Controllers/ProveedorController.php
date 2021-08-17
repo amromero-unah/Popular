@@ -12,9 +12,9 @@ class ProveedorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $proveedores = Proveedor::paginate(10);
+        $proveedores = Proveedor::search($request->search)->paginate(10);
         return view('proveedores_index')->with('proveedores', $proveedores);
     }
 
