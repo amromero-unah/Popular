@@ -136,14 +136,5 @@ class ProveedorController extends Controller
 
         return redirect()->route("proveedor.index")->with("error", "Se eliminó exitosamente el proveedor");
     }
-    public function buscarProveedor(Request $request)
-    {
-        $busqueda = $request->input("busqueda");
-        $proveedores = Proveedor::where("nombre",
-            "like", "%" . $request->input("busqueda") . "%")
-            ->paginate(10);
 
-        return view("proveedores.proveedores_index")
-            ->with("busqueda", $busqueda)->with("proveedores", $proveedores);
-    }
 }

@@ -12,9 +12,9 @@ class ClienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $clientes = Cliente::paginate(10);
+        $clientes = Cliente::search($request->search)->paginate(10);
         return view('clientes_index')->with('clientes', $clientes);
     }
 
@@ -123,14 +123,4 @@ class ClienteController extends Controller
         return redirect()->route("cliente.index")->with("error", "Se eliminó exitosamente el cliente.");
     }
 
-    public function buscarCliente(Request $request)
-    {
-        $busqueda = $request->input("busqueda");
-        $clientes = Cliente::where("nombre_cliente",
-            "like", "%" . $request->input("busqueda") . "%")
-            ->paginate(10);
-
-        return view("clientes.clientes_index")
-            ->with("busqueda", $busqueda)->with("clientes", $clientes);
-    }
 }

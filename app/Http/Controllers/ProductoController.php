@@ -12,9 +12,9 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $productos = Producto::paginate(10);
+        $productos = Producto::search($request->search)->paginate(10);
         return view('productos_index')->with('productos', $productos);
     }
 
@@ -134,14 +134,14 @@ class ProductoController extends Controller
         return redirect()->route("producto.index")->with("error", "Se eliminó exitosamente el producto");
     }
 
-    public function buscarCliente(Request $request)
-    {
-        $busqueda = $request->input("busqueda");
-        $productos = Producto::where("nombre_producto",
-            "like", "%" . $request->input("busqueda") . "%")
-            ->paginate(10);
+    // public function buscarCliente(Request $request)
+    // {
+    //     $busqueda = $request->input("busqueda");
+    //     $productos = Producto::where("nombre_producto",
+    //         "like", "%" . $request->input("busqueda") . "%")
+    //         ->paginate(10);
 
-        return view("clientes.clientes_index")
-            ->with("busqueda", $busqueda)->with("clientes", $productos);
-    }
+    //     return view("clientes.clientes_index")
+    //         ->with("busqueda", $busqueda)->with("clientes", $productos);
+    // }
 }
