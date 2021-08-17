@@ -18,7 +18,7 @@
 
                     <hr style="border-top: 2px solid white; border-bottom: 2px solid white; border-left:none; border-right:none; height: 2px; ">
 
-                    <div  style="margin-top: 10px;  width: 300px ; height: 300px; float: left; display: inline-block; margin-top: 10px; margin-bottom: 20px; margin-left: 10px; margin-right: 10px">
+                    <div  style="margin-top: 10px;  width: 275px ; height: 270px; float: left; display: inline-block; margin-top: 10px; margin-bottom: 20px; margin-left: 10px; margin-right: 10px">
                         <img src="/images/proveedores.jpg" style="margin-bottom:20px; border-radius: 5px " class="card-img-top" alt="">
                     </div>
 
