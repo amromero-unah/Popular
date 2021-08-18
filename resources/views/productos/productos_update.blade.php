@@ -39,7 +39,7 @@
                                                maxlength="50" name="nombre_producto" id="nombre_producto">
                                         @error('nombre_producto')
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                         @enderror
                                     </div>
@@ -61,7 +61,7 @@
                                                maxlength="50" name="categoria_producto" id="categoria_producto">
                                         @error('categoria_producto')
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                         @enderror
                                     </div>
@@ -83,7 +83,7 @@
                                                maxlength="20" name="precio_compra" id="precio_compra">
                                         @error('precio_compra')
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                         @enderror
                                     </div>
@@ -104,7 +104,7 @@
                                                maxlength="20" name="precio_venta" id="precio_venta">
                                         @error('precio_venta')
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                         @enderror
                                     </div>

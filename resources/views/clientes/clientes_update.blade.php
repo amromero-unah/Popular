@@ -38,7 +38,7 @@
                                                maxlength="50" name="nombre_cliente" id="nombre_cliente">
                                         @error('nombre_cliente')
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                         @enderror
                                     </div>
@@ -61,7 +61,7 @@
                                                name="telefono_cliente" id="telefono_cliente">
                                         @error('telefono_cliente')
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                         @enderror
                                     </div>

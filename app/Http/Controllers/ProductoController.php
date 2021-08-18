@@ -39,8 +39,9 @@ class ProductoController extends Controller
         $this->validate($request, [
             "nombre_producto" => "required|max:50",
             "categoria_producto" => "required|max:50",
-            "precio_compra" => "required|max:20",
-            "precio_venta" => "required|max:20",
+            "precio_compra"=>"required|min:1",
+            "precio_venta"=>"required|min:precio_compra",
+
 
         ], [
             "nombre_producto.required" => "Se requiere ingresar el nombre del producto.",
@@ -48,8 +49,8 @@ class ProductoController extends Controller
             "nombre_producto.required" => "Se requiere ingresar la categoria del producto.",
             "nombre_producto.max" => "La categoria no debe ser máximo a 50 caracteres.",
             "telefono_cliente.required" => "Se requiere ingresar el télefono del cliente",
-            "precio_compra.max" => "El télefono debe ser igual a 20 digitos",
-            "precio_venta.max" => "El télefono debe ser igual a 20 digitos",
+            "precio_compra.min" => "El precio de compra debe ser menor que el precio de venta",
+            "precio_venta" => "El precio de compra debe ser menor que el precio de venta"
         ]);
 
         $producto = new Producto();
@@ -95,12 +96,16 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $this->validate($request, [
             "nombre_producto" => "required|max:50",
             "categoria_producto" => "required|max:50",
-            "precio_compra" => "required|max:20",
-            "precio_venta" => "required|max:20",
+            "precio_compra" => "required|min:precio_venta",
+            "precio_venta" => "required",
+
         ], [
+
+            "precio_compra.min" => "El precio de compra debe ser menor al precio de venta",
             "nombre_producto.required" => "Se requiere ingresar el nombre del producto.",
             "nombre_producto.max" => "El nombre no debe ser máximo a 50 caracteres.",
             "nombre_producto.required" => "Se requiere ingresar la categoria del producto.",

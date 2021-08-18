@@ -23,7 +23,7 @@
                                       method="post">
                                     @csrf
 
-                                
+
                                     <div class="d-grid gap-2" style="margin: 0 auto">
                                         <label style="color: white"><strong>Nombre:</strong></label>
                                         <input class="form-control  @error('nombre_proveedor') is-invalid @enderror"
@@ -35,7 +35,7 @@
                                                maxlength="50" name="nombre_proveedor" id="nombre_proveedor">
                                         @error('nombre_cliente')
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                         @enderror
                                     </div>
@@ -51,7 +51,7 @@
                                                maxlength="50" name="correo_proveedor" id="correo_proveedor">
                                         @error('correo_proveedor')
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                         @enderror
                                     </div>
@@ -70,7 +70,7 @@
                                                name="telefono_proveedor" id="telefono_proveedor">
                                         @error('telefono_proveedor')
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                         @enderror
                                     </div>
@@ -86,7 +86,7 @@
                                                maxlength="50" name="nombre_contacto_proveedor" id="nombre_contacto_proveedor">
                                         @error('nombre_contacto_proveedor')
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: white">{{ $message }}</strong>
                                     </span>
                                         @enderror
                                     </div>

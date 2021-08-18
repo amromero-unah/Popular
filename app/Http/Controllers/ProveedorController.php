@@ -38,7 +38,7 @@ class ProveedorController extends Controller
     {
         $this->validate($request, [
             "nombre_proveedor" => "required|max:50",
-            "correo_proveedor" => "required",
+            "correo_proveedor" => "required|unique:proveedors,correo_proveedor",
             "nombre_contacto_proveedor" => "required|max:50",
             "telefono_proveedor" => "required|max:99999999|unique:proveedors,telefono_proveedor,"
         ], [
@@ -49,6 +49,7 @@ class ProveedorController extends Controller
             "telefono_proveedor.max" => "El télefono debe ser igual a 8 caracteres",
             "telefono_proveedor.min" => "El télefono debe ser igual a 8 caracteres",
             "telefono_proveedor.unique" => "El télefono ya ha sido registrado",
+            "correo_proveedor.unique" => "El correo electrónico ya ha sido registrado",
             "nombre_contacto_proveedor.required" => "Se requiere ingresar el nombre del contacto del proveedor.",
             "nombre_contacto_peroveedor.max" => "El nombre del contacto no debe ser máximo a 50 caracteres.",
         ]);
@@ -98,7 +99,7 @@ class ProveedorController extends Controller
     {
         $this->validate($request, [
             "nombre_proveedor" => "required|max:50",
-            "correo_proveedor" => "required",
+            "correo_proveedor" => "required|unique:proveedors,correo_proveedor,". $id,
             "nombre_contacto_proveedor" => "required|max:50",
             "telefono_proveedor" => "required|max:99999999|unique:proveedors,telefono_proveedor,". $id,
         ], [
@@ -109,6 +110,7 @@ class ProveedorController extends Controller
             "telefono_proveedor.max" => "El télefono debe ser igual a 8 caracteres",
             "telefono_proveedor.min" => "El télefono debe ser igual a 8 caracteres",
             "telefono_proveedor.unique" => "El télefono ya ha sido registrado",
+            "correo_proveedor.unique" => "El correo electrónico ya ha sido registrado",
             "nombre_contacto_proveedor.required" => "Se requiere ingresar el nombre del contacto del proveedor.",
             "nombre_contacto_peroveedor.max" => "El nombre del contacto no debe ser máximo a 50 caracteres.",
         ]);
